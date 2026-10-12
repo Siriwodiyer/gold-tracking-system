@@ -1,0 +1,11 @@
+{
+  "name": "gold-tracking-root",
+  "version": "1.0.0",
+  "description": "Root wrapper for Gold Tracking Backend & 3D Frontend",
+  "scripts": {
+    "start": "npm --prefix Gold_Tracking_Backend_7_Blocks start",
+    "dev": "npm --prefix Gold_Tracking_Backend_7_Blocks run dev",
+    "compile": "npm --prefix Gold_Tracking_Backend_7_Blocks run compile",
+    "deploy": "npm --prefix Gold_Tracking_Backend_7_Blocks run deploy"
+  }
+}

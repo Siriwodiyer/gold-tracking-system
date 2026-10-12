@@ -1,0 +1,24 @@
+{
+  "name": "gold-tracking-7-stage",
+  "version": "1.0.0",
+  "description": "Backend and blockchain prototype for a 7-stage blockchain-based end-to-end gold tracking system.",
+  "main": "src/server.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "hardhat test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "hardhat": "^3.19.0"
+  }
+}

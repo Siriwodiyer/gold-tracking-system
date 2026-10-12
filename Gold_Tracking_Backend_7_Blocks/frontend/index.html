@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GoldTrace 3D — Next-Gen 7-Stage Blockchain Gold Tracking and Provenance Platform." />
+  <title>AURUM TRACE 3D | Mine-to-Finger Blockchain Gold Provenance</title>
+  
+  <!-- Modern Luxury & Tech Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <div class="app-shell">
+    <!-- Top Navigation Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-crest">
+          <span class="crest-symbol">Au</span>
+          <span class="crest-atomic">79</span>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">AURUM TRACE <span class="badge-3d">3D</span></div>
+          <div class="brand-subtitle">7-STAGE BLOCKCHAIN PROVENANCE • MINE-TO-FINGER</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#viewport-section" class="nav-link active"><span>◈</span> 3D Studio</a>
+        <a href="#lifecycle-section" class="nav-link"><span>∿</span> Lifecycle</a>
+        <a href="#register-section" class="nav-link"><span>＋</span> Register Stage</a>
+        <a href="#verify-section" class="nav-link"><span>✓</span> Verify HUID</a>
+        <a href="#fraud-section" class="nav-link"><span>🛡</span> Fraud Shield</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button id="quickDemoBtn" class="pill-btn demo-btn" title="Populate full sample demo batch">
+          <span class="btn-icon">⚡</span> Quick Demo Data
+        </button>
+        <button id="themeToggle" class="icon-pill-btn" title="Toggle Obsidian / Pearl Theme" aria-label="Toggle Theme">
+          <span id="themeIcon">☀</span>
+        </button>
+        <button id="connectBtn" class="connect-wallet-btn">
+          <span class="wallet-dot"></span>
+          <span id="connectBtnText">Connect Wallet</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Flow -->
+    <main class="main-viewport">
+      
+      <!-- 3D Interactive Hero Section -->
+      <section class="hero-3d-section" id="viewport-section">
+        <div class="viewport-card">
+          <!-- 3D WebGL Canvas Container -->
+          <div class="canvas-wrapper" id="threeContainer">
+            <!-- Floating 3D Overlays -->
+            <div class="viewport-hud-top">
+              <div class="hud-pill live-pill">
+                <span class="pulse-indicator"></span> 3D WEBGL LIVE ENGINE
+              </div>
+              <div class="mode-toggles">
+                <button class="mode-btn active" data-mode="all">Constellation</button>
+                <button class="mode-btn" data-mode="ingot">Bullion View</button>
+                <button class="mode-btn" data-mode="stages">7 Stages</button>
+              </div>
+            </div>
+
+            <div class="viewport-hud-bottom">
+              <div class="interaction-hint">
+                <span class="hint-icon">✥</span> Drag to orbit • Scroll to zoom • Click spheres to select stage
+              </div>
+              <div class="view-controls">
+                <button id="toggleRotateBtn" class="hud-icon-btn" title="Toggle Auto-Rotation">⟳ Auto-Rotate</button>
+                <button id="resetCameraBtn" class="hud-icon-btn" title="Reset View">◎ Reset</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Telemetry & Active Batch Info Sidebar -->
+          <div class="hero-telemetry-pane">
+            <div class="telemetry-header">
+              <span class="gold-eyebrow">ACTIVE SUPPLY CHAIN TELEMETRY</span>
+              <h2 id="activeBatchTitle">GOLD-2026-001</h2>
+              <div class="batch-state-pill" id="batchStateBadge">
+                <span class="dot-active"></span> In-Transit / Refining Active
+              </div>
+            </div>
+
+            <!-- Live Mass-Balance & Purity Metric Cards -->
+            <div class="telemetry-grid">
+              <div class="telem-card">
+                <span class="telem-label">Recorded Weight</span>
+                <div class="telem-val" id="heroWeightVal">1,000.00 <small>g</small></div>
+                <span class="telem-sub" id="heroWeightStage">Stage 1: Mining Origin</span>
+              </div>
+              <div class="telem-card">
+                <span class="telem-label">Certified Purity</span>
+                <div class="telem-val gold-accent" id="heroPurityVal">99.50 <small>%</small></div>
+                <span class="telem-sub">24 Karat Fine Gold</span>
+              </div>
+              <div class="telem-card">
+                <span class="telem-label">Chain Custody</span>
+                <div class="telem-val" id="heroLocationVal">Karnataka Quarry</div>
+                <span class="telem-sub" id="heroActorVal">Verified Actor</span>
+              </div>
+              <div class="telem-card">
+                <span class="telem-label">Mass Balance</span>
+                <div class="telem-val text-success" id="heroMassBalanceVal">Balanced (100%)</div>
+                <span class="telem-sub">Conservation Law Enforced</span>
+              </div>
+            </div>
+
+            <!-- Mass Balance Yield Flow Indicator -->
+            <div class="mass-balance-bar-container">
+              <div class="mass-bar-header">
+                <span>Mass Conservation Flow</span>
+                <strong id="massFlowRatio">1000g → 980g → 950g → 300g</strong>
+              </div>
+              <div class="mass-progress-track">
+                <div class="mass-progress-fill" id="massProgressFill" style="width: 95%;"></div>
+              </div>
+              <div class="mass-legend">
+                <span>● Ore: 1000g</span>
+                <span>● Refined: 980g</span>
+                <span>● Melted: 950g</span>
+                <span>● Final Product: 300g</span>
+              </div>
+            </div>
+
+            <!-- Cryptographic Verification Pill -->
+            <div class="crypto-seal-card">
+              <div class="seal-icon">🛡</div>
+              <div>
+                <strong>Smart Contract Mass-Balance Verified</strong>
+                <p>Protected by Solidity 0.8.24 modifiers against illegal gold dilution or inflation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: 7-Stage Lifecycle Timeline -->
+      <section class="section-container" id="lifecycle-section">
+        <div class="section-head">
+          <div>
+            <span class="gold-eyebrow">IMMUTABLE CHRONOLOGY</span>
+            <h2 class="section-title">The 7-Stage Mine-to-Finger Lifecycle</h2>
+            <p class="section-sub">Cryptographically linked state transitions recorded forever on the blockchain.</p>
+          </div>
+          <div class="search-batch-box">
+            <input type="text" id="historyBatchId" placeholder="Enter Batch ID (e.g. GOLD-2026-001)" value="GOLD-2026-001" />
+            <button id="searchBatchBtn" class="glow-primary-btn">Query Blockchain</button>
+          </div>
+        </div>
+
+        <!-- 7 Stages Dynamic Grid -->
+        <div class="lifecycle-timeline" id="timeline">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </section>
+
+      <!-- Section: Stage Registration Studio -->
+      <section class="section-container" id="register-section">
+        <div class="section-head">
+          <div>
+            <span class="gold-eyebrow">TRANSACTION STUDIO</span>
+            <h2 class="section-title">Register Supply-Chain Stage</h2>
+            <p class="section-sub">Direct on-chain execution with automated mass-balance checks and hash verification.</p>
+          </div>
+          <button id="fillStageSampleBtn" class="pill-btn">
+            <span>✎</span> Pre-fill Sample Values
+          </button>
+        </div>
+
+        <div class="register-studio-card">
+          <!-- 7-Stage Step Selector Tabs -->
+          <div class="stage-stepper" id="stageSelector">
+            <!-- Generated dynamically -->
+          </div>
+
+          <div class="stage-guide-banner" id="stageGuideBanner">
+            <div class="guide-icon" id="guideIcon">⛏</div>
+            <div>
+              <h4 id="guideTitle">Stage 1: Mining Origin Registration</h4>
+              <p id="guideDescription">Logs initial raw gold extraction, weight in grams, quarry location, and mining concession certificate.</p>
+            </div>
+          </div>
+
+          <!-- Registration Form -->
+          <form id="stageForm" class="stage-form-grid">
+            <!-- Dynamic Form Inputs Generated by JS -->
+          </form>
+
+          <div class="form-action-bar">
+            <div class="validation-note">
+              <span class="lock-icon">🔒</span>
+              <span id="formValidationStatus">Ready to broadcast transaction. Validated by smart contract rules.</span>
+            </div>
+            <button type="submit" form="stageForm" id="submitStageBtn" class="glow-primary-btn large-btn">
+              <span>⚡</span> Write Record to Blockchain
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: HUID Verification & Digital Certificate -->
+      <section class="section-container" id="verify-section">
+        <div class="section-head">
+          <div>
+            <span class="gold-eyebrow">CONSUMER & REGULATOR PORTAL</span>
+            <h2 class="section-title">Hallmark Unique ID (HUID) Verification</h2>
+            <p class="section-sub">Verify authentic gold jewelry and view its complete cryptographic Certificate of Provenance.</p>
+          </div>
+        </div>
+
+        <div class="verification-hub">
+          <div class="search-huid-panel">
+            <label for="huidInput" class="panel-label">Enter 6-to-14 character Hallmark Unique ID</label>
+            <div class="huid-input-group">
+              <input type="text" id="huidInput" placeholder="e.g. HUID-2026-0001" value="HUID-2026-0001" />
+              <button id="verifyBtn" class="glow-primary-btn">Verify Authenticity</button>
+            </div>
+            <div class="quick-tags">
+              <span>Try samples:</span>
+              <button class="tag-btn" data-huid="HUID-2026-0001">HUID-2026-0001 (Valid)</button>
+              <button class="tag-btn" data-huid="HUID-FAKE-9999">HUID-FAKE-9999 (Invalid)</button>
+            </div>
+          </div>
+
+          <!-- Digital Holographic Certificate Output -->
+          <div id="verifyResult" class="certificate-viewport">
+            <!-- Empty state or certificate dynamically placed here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Mass-Balance Fraud Simulator -->
+      <section class="section-container" id="fraud-section">
+        <div class="section-head">
+          <div>
+            <span class="gold-eyebrow">SECURITY DEMONSTRATION</span>
+            <h2 class="section-title">Mass-Balance Fraud & Anti-Dilution Shield</h2>
+            <p class="section-sub">Demonstrates how the smart contract reverts any unauthorized gold inflation.</p>
+          </div>
+        </div>
+
+        <div class="fraud-sim-card">
+          <div class="sim-grid">
+            <div class="sim-column">
+              <h3>Scenario: Melter has 950g available</h3>
+              <p>In stage 5 (Agency Melting), 950g of certified gold is recorded for batch <code>GOLD-2026-001</code>.</p>
+              
+              <div class="sim-input-box">
+                <label>Manufacturer Attempted Output (grams):</label>
+                <div class="sim-stepper">
+                  <input type="number" id="simWeightInput" value="1200" step="10" />
+                  <span class="unit">g</span>
+                </div>
+                <small class="text-muted">Available certified: <b>950 g</b></small>
+              </div>
+
+              <div class="sim-buttons">
+                <button id="testValidWeightBtn" class="pill-btn">Set Legitimate (300g)</button>
+                <button id="testFraudWeightBtn" class="pill-btn danger-pill">Set Fraudulent (1200g)</button>
+              </div>
+            </div>
+
+            <div class="sim-column result-col">
+              <div class="contract-rule-badge">
+                <code>require(outputWeight &lt;= availableWeight, "Mass Balance Violation: output exceeds available certified gold")</code>
+              </div>
+
+              <div class="sim-verdict-box" id="simVerdictBox">
+                <div class="verdict-icon danger-icon">✕</div>
+                <div class="verdict-text">
+                  <h4 class="text-danger">TRANSACTION REVERTED BY SMART CONTRACT</h4>
+                  <p><b>Error:</b> Mass Balance Violation: output exceeds available certified gold (1,200g &gt; 950g).</p>
+                  <small>The blockchain forbids creating gold out of thin air or smuggling uncertified scrap.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contract & Settings Drawer / Footer Section -->
+      <section class="section-container settings-section">
+        <div class="settings-card">
+          <div class="settings-header">
+            <div>
+              <span class="gold-eyebrow">ETHEREUM / LOCALHOST CONNECTION</span>
+              <h3>Smart Contract Target</h3>
+            </div>
+            <div class="network-badge" id="networkPill">
+              <span class="dot-network"></span> Standalone Web3 / Local Node
+            </div>
+          </div>
+          <div class="settings-row">
+            <input type="text" id="contractAddress" placeholder="Paste deployed GoldTracking address (0x...)" />
+            <button id="saveContractBtn" class="pill-btn">Save Contract</button>
+            <button id="resetDemoStorageBtn" class="pill-btn" title="Reset local batch state">Reset Local Cache</button>
+          </div>
+          <p class="settings-note">
+            Targeting Solidity <code>0.8.24</code> contract. You can deploy in Remix (via Injected Provider MetaMask) or using <code>npx hardhat node</code>, then paste the contract address above.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-left">
+          <strong>AURUM TRACE 3D</strong> • Blockchain-Based End-to-End Gold Tracking System Using Smart Tracking
+        </div>
+        <div class="footer-right">
+          <span>7-Stage Cryptographic State Machine</span> • <span>Solidity 0.8.24</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-card">
+    <div class="toast-icon" id="toastIcon">✦</div>
+    <div class="toast-body">
+      <div class="toast-title" id="toastTitle">Notification</div>
+      <div class="toast-msg" id="toastMsg">Operation successful</div>
+    </div>
+  </div>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Ethers.js v6 UMD CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.15.0/dist/ethers.umd.min.js"></script>
+  <!-- 3D Scene Controller -->
+  <script src="three-scene.js"></script>
+  <!-- Main Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

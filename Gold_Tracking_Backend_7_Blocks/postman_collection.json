@@ -1,0 +1,154 @@
+{
+  "info": {
+    "name": "Gold Tracking Backend - 7 Blocks",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "1 - Mining",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"weightGrams\": 1000, \"location\": \"Mine-A\", \"referenceId\": \"MINE-001\", \"documentCID\": \"CID-MINE\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/1-mining"
+      }
+    },
+    {
+      "name": "2 - Transport",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"weightGrams\": 1000, \"location\": \"Route-A\", \"referenceId\": \"TRANS-001\", \"documentCID\": \"CID-TRANS\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/2-transport"
+      }
+    },
+    {
+      "name": "3 - Refining",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"weightGrams\": 995, \"purityBps\": 9990, \"location\": \"Refinery-A\", \"referenceId\": \"REF-001\", \"documentCID\": \"CID-REF\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/3-refining"
+      }
+    },
+    {
+      "name": "4 - Hallmarking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"weightGrams\": 995, \"purityBps\": 9990, \"location\": \"Hallmark-A\", \"referenceId\": \"HALL-001\", \"documentCID\": \"CID-HALL\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/4-hallmarking"
+      }
+    },
+    {
+      "name": "5 - Agency Melting",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"weightGrams\": 990, \"location\": \"Agency-A\", \"referenceId\": \"MELT-001\", \"documentCID\": \"CID-MELT\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/5-agency-melting"
+      }
+    },
+    {
+      "name": "6 - Manufacturing",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"jewelleryWeightGrams\": 20, \"jewelleryId\": \"JEW-001\", \"location\": \"Manufacturer-A\", \"documentCID\": \"CID-JEW\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/6-manufacturing"
+      }
+    },
+    {
+      "name": "7 - Final Verification",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"batchId\": \"GOLD001\", \"jewelleryWeightGrams\": 20, \"huid\": \"HUID001\", \"location\": \"Retail-A\", \"documentCID\": \"CID-FINAL\"}"
+        },
+        "url": "{{baseUrl}}/api/blocks/7-final-verification"
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health"
+      }
+    },
+    {
+      "name": "History",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/gold/GOLD001/history"
+      }
+    },
+    {
+      "name": "Verify HUID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/verify/HUID001"
+      }
+    }
+  ]
+}
